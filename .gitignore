@@ -1,0 +1,12 @@
+.env
+trace_logs/
+1st_model_test/
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+
+Loong/data/
+Loong/output/
+sealqa/longseal.parquet

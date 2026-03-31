@@ -1,0 +1,79 @@
+Task Instruction:
+{instruction}
+
+Target Question:
+{question}
+
+Document Catalog:
+{document_catalog}
+
+Checker Feedback:
+{checker_feedback_or_none}
+
+Be concise but specific.
+Do not write anything outside the required headings and bullet schema.
+
+If Checker Feedback is not None:
+- treat it as the main signal for what remains unresolved,
+- plan only for the uncertain or missing parts named there,
+- and do not rebuild the whole graph unless the feedback implies that the entire current plan is inadequate.
+
+Output exactly with the following headings.
+
+### Task Goal
+Write the real decision goal in 1-3 sentences.
+
+### Task Model
+Write bullet lines in this exact format:
+- [MODEL_1] answer_topology=... | atomic_decision=... | search_regime=... | grounding_unit=... | coverage_mode=... | stop_condition=...
+Rules:
+- answer_topology should be a concise label such as scalar, mapping, grouping, ranking, set, list, or freeform.
+- atomic_decision should be a concise label such as extraction, relation_judgment, assignment, comparison, or aggregation.
+- search_regime should be closed_set, open_set, or mixed.
+- grounding_unit should be packet, paragraph, row, multi_packet, or mixed.
+- coverage_mode should be exhaustive or selective.
+- stop_condition should state when checker can stop.
+- Prefer one compact model line.
+- Do not use the pipe character inside field values.
+
+### Answer Schema
+Write bullet lines in this exact format:
+- [ANSWER_1] key=... | meaning=... | expected_value=...
+Rules:
+- expected_value should be a compact type such as scalar, title_list, category_assignment, grouped_titles, or boolean.
+- Define only the real final-answer fields or buckets.
+- Do not use the pipe character inside field values.
+
+### Search Targets
+Write bullet lines in this exact format:
+- [TARGET_1] name=... | ask=... | evidence_shape=... | success_condition=...
+Rules:
+- Each target should be reusable and document-local.
+- If the task is a closed-set relation problem, keep endpoint identity and direction explicit.
+- If the task is comparison or ranking, target local comparable evidence rather than the final winner.
+- If the task asks whether a document belongs to a category or case type, target decisive local evidence that states or strongly entails membership, even when the exact category wording is absent.
+- For category or case-type tasks, phrase ask and success_condition as evidence collection goals rather than exact label confirmation.
+- Good category targets collect local formulations about the dispute, benefit, entitlement, refusal, approval, payment, qualification, or administrative action that a later checker can project into the answer space.
+- evidence_shape should be packet_span, table_row, short_paragraph, citation_entry, or mixed.
+- Do not use the pipe character inside field values.
+
+### Document Execution Graph
+Write bullet lines in this exact format:
+- [STEP_1] doc=DOC1 | anchor=... | search_target=... | focus_regions=... | read_strategy=... | stop_when=...
+Rules:
+- focus_regions should reference one or more Divider region ids such as R1,R2.
+- Use the document catalog to choose compact starting regions instead of whole-document scans.
+- If the task is closed-set and exhaustive, ensure the graph covers every required document or edge.
+- If the task is closed-set and exhaustive and a document has multiple plausible regions, include both a primary focus region and a fallback region.
+- Avoid metadata-only plans when another region is likely to contain stronger grounding.
+- If checker feedback names only specific docs or steps, emit only the repaired subgraph for those affected parts.
+- read_strategy should be a compact label such as locate_then_read_contiguous, scoped_table_read, or focused_then_expand.
+- stop_when should say when this local search is sufficient.
+- Do not use the pipe character inside field values.
+
+### Merge Policy
+Write 2-5 sentences explaining how document-local evidence should later be merged into the final answer state.
+State how out-of-set mentions, partial coverage, conflicts, and no-hit results should be handled.
+
+### Planning Notes
+Write 1-3 short sentences naming the main extraction risks and why the chosen execution graph reduces them.

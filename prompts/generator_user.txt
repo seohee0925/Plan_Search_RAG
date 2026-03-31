@@ -1,0 +1,31 @@
+Task Instruction:
+{instruction}
+
+Target Question:
+{question}
+
+Task Goal:
+{task_goal}
+
+Task Model:
+{task_model}
+
+Answer Schema:
+{answer_schema}
+
+Evidence State Summary:
+{evidence_state_summary}
+
+Projected Answer State:
+{projected_answer_state}
+
+Be concise and exact.
+Do not write anything outside the required headings.
+
+Output exactly with these headings:
+
+### Render Summary
+Write 1-2 short sentences about how the projected answer state is being rendered.
+
+### Final Answer
+Write the final answer in the exact format required by the task.

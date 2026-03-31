@@ -1,0 +1,75 @@
+Task Instruction:
+{instruction}
+
+Target Question:
+{question}
+
+Task Goal:
+{task_goal}
+
+Task Model:
+{task_model}
+
+Answer Schema:
+{answer_schema}
+
+Merge Policy:
+{merge_policy}
+
+Search Target:
+- name={search_target_name}
+- ask={search_target_ask}
+- success_condition={search_target_success_condition}
+
+Current Document:
+- doc={doc_id}
+- title={display_title}
+- anchor={doc_anchor}
+
+Focus Regions:
+{focus_regions}
+
+Scoped Region Map:
+{scoped_region_map}
+
+Scoped Packet View:
+{scoped_packet_view}
+
+Be concise but specific.
+Do not write anything outside the required headings and bullet schema.
+
+Output exactly with the following headings.
+
+### Search Trace
+Write bullet lines in this exact format:
+- [TRACE_1] action=... | packets=... | why=...
+Rules:
+- Keep it short.
+- Mention only the main scoped search actions you actually used.
+- Prefer a sequence like locate -> inspect neighbor -> record when that reflects what you did.
+- Do not use the pipe character inside field values.
+
+### Evidence Units
+Write bullet lines in this exact format:
+- [UNIT_1] search_target=... | status=... | packet_refs=... | evidence_kind=... | extracted_text=... | note=...
+Rules:
+- status must be one of: grounded_candidate, scoped_no_hit.
+- Extract evidence, not your conclusion alone.
+- extracted_text should preserve the smallest sufficient raw span.
+- extracted_text may be a sentence, a paragraph, or a short contiguous multi-paragraph span when one sentence is not enough.
+- packet_refs should name one or more packet ids.
+- Prefer exact or near-verbatim source text over summaries.
+- Preserve metric labels, dates, units, and decisive judgment phrases when they matter for grounding.
+- If multiple scoped packets are plausible, prefer the packet that states the decisive clue most explicitly.
+- grounded_candidate means a real grounded span worth passing to the checker.
+- Do not decide here whether the candidate span finally satisfies the task.
+- For category or case-type targets, when the packets describe a concrete dispute, refusal, payment, benefit, qualification, entitlement, or administrative action, emit that wording as candidate evidence instead of suppressing it.
+- If the packets contain a nearby formulation that may matter later, emit it as grounded_candidate instead of a scoped_no_hit.
+- If the scoped view is insufficient, emit one concise scoped_no_hit unit instead of many negatives.
+- Do not use the pipe character inside field values.
+
+### Search Status
+Write exactly one label:
+scoped_complete
+scoped_with_evidence
+scoped_no_hit
