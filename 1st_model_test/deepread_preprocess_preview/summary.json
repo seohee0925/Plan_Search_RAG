@@ -1,0 +1,283 @@
+{
+  "paper": [
+    {
+      "doc_id": "DOC1",
+      "title": "TinyLlama: An Open-Source Small Language Model",
+      "node_count": 12,
+      "nodes": [
+        {
+          "id": "1",
+          "title": "TinyLlama: An Open-Source Small Language Model",
+          "paragraph_count": 2,
+          "children": [
+            "2",
+            "3",
+            "4",
+            "9",
+            "10",
+            "11",
+            "12"
+          ],
+          "preview": "Peiyuan Zhang* Guangtao Zeng* Tianduo Wang Wei Lu<br>StatNLP Research Group<br>Singapore University of Technology and Design<br>\\{peiyuan_zhang, tianduo_wang, luwei\\}@sutd.edu.sg<b"
+        },
+        {
+          "id": "2",
+          "title": "Abstract",
+          "paragraph_count": 1,
+          "children": [],
+          "preview": "We present TinyLlama, a compact 1.1B language model pretrained on around 1 trillion tokens for approximately 3 epochs. Building on the architecture and tokenizer of Llama 2 (Touvro"
+        },
+        {
+          "id": "3",
+          "title": "1 Introduction",
+          "paragraph_count": 4,
+          "children": [],
+          "preview": "Recent progress in natural language processing (NLP) has been largely propelled by scaling up language model sizes (Brown et al., 2020; Chowdhery et al., 2022; Touvron et al., 2023"
+        },
+        {
+          "id": "4",
+          "title": "2 Pretraining",
+          "paragraph_count": 1,
+          "children": [
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "preview": "This section describes how we pre-trained TinyLlama. First, we introduce the details of the pretraining corpus and the data sampling method. Next, we elaborate on the model archite"
+        },
+        {
+          "id": "5",
+          "title": "2.1 Pre-training data",
+          "paragraph_count": 4,
+          "children": [],
+          "preview": "Our main objective is to make the pre-training process effective and reproducible. We adopt a mixture of natural language data and code data to pre-train TinyLlama, sourcing natura"
+        },
+        {
+          "id": "6",
+          "title": "2.2 Architecture",
+          "paragraph_count": 7,
+          "children": [],
+          "preview": "We adopt a similar model architecture to Llama 2 (Touvron et al., 2023b). We use a Transformer architecture based on Vaswani et al. (2017) with the following details:"
+        },
+        {
+          "id": "7",
+          "title": "2.3 Speed Optimizations",
+          "paragraph_count": 4,
+          "children": [],
+          "preview": "Fully Sharded Data Parallel (FSDP) During training, our codebase has integrated FSDP ${ }^{1}$ to leverage multi-GPU and multi-node setups efficiently. This integration is crucial "
+        },
+        {
+          "id": "8",
+          "title": "2.4 Training",
+          "paragraph_count": 4,
+          "children": [],
+          "preview": "We build our framework based on lit-gpt. ${ }^{3}$ In adhering to Llama 2 (Touvron et al., 2023b), we employ an autoregressive language modeling objective during the pretraining ph"
+        }
+      ]
+    },
+    {
+      "doc_id": "DOC2",
+      "title": "Lory: Fully Differentiable Mixture-of-Experts for Autoregressive Language Model Pre-training",
+      "node_count": 23,
+      "nodes": [
+        {
+          "id": "1",
+          "title": "Lory: Fully Differentiable Mixture-of-Experts for Autoregressive Language Model Pre-training",
+          "paragraph_count": 1,
+          "children": [
+            "2",
+            "3",
+            "4",
+            "7",
+            "10",
+            "13",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23"
+          ],
+          "preview": "Zexuan Zhong ${ }^{\\dagger}$, Mengzhou Xia $^{\\dagger}$, Danqi Chen ${ }^{\\dagger}$, Mike Lewis ${ }^{\\ddagger}$<br>${ }^{\\dagger}$ Princeton University, ${ }^{\\ddagger}$ Meta AI<b"
+        },
+        {
+          "id": "2",
+          "title": "Abstract",
+          "paragraph_count": 1,
+          "children": [],
+          "preview": "Mixture-of-experts (MoE) models facilitate efficient scaling; however, training the router network introduces the challenge of optimizing a non-differentiable, discrete objective. "
+        },
+        {
+          "id": "3",
+          "title": "1 Introduction",
+          "paragraph_count": 8,
+          "children": [],
+          "preview": "Mixture-of-experts (MoE) architectures with sparse activation enable the scaling of model sizes while maintaining high training and inference efficiency (Lepikhin et al., 2021; Fed"
+        },
+        {
+          "id": "4",
+          "title": "2 Preliminaries",
+          "paragraph_count": 0,
+          "children": [
+            "5",
+            "6"
+          ],
+          "preview": null
+        },
+        {
+          "id": "5",
+          "title": "2.1 Sparsely-activated MoE",
+          "paragraph_count": 3,
+          "children": [],
+          "preview": "Transformer-based MoE language models typically substitute feed-forward network (FFN) layers with sparsely-activiated MoE layers (Shazeer et al., 2017; Fedus et al., 2022; Zoph et "
+        },
+        {
+          "id": "6",
+          "title": "2.2 Fully Differentiable MoE Architectures via Expert Merging",
+          "paragraph_count": 3,
+          "children": [],
+          "preview": "The primary challenges in training sparsely activated MoE models arise from the difficulty in training discrete routers. A promising direction is to design fully differentiable MoE"
+        },
+        {
+          "id": "7",
+          "title": "3 Our Approach: Lory",
+          "paragraph_count": 2,
+          "children": [
+            "8",
+            "9"
+          ],
+          "preview": "In this section, we present Lory, an approach for pre-training fully differentiable MoE language models (Figure 1). The core technique that enables Lory to be fully differentiable "
+        },
+        {
+          "id": "8",
+          "title": "3.1 Efficient Expert Merging via Causal Segment Routing",
+          "paragraph_count": 5,
+          "children": [],
+          "preview": "Challenges. An intuitive way of reducing the computational cost is to use segment-level routing instead of token-level routing, which can reduce the number of merging operations fr"
+        }
+      ]
+    },
+    {
+      "doc_id": "DOC3",
+      "title": "OpenMoE: An Early Effort on Open Mixture-of-Experts Language Models",
+      "node_count": 23,
+      "nodes": [
+        {
+          "id": "1",
+          "title": "OpenMoE: An Early Effort on Open Mixture-of-Experts Language Models",
+          "paragraph_count": 6,
+          "children": [
+            "2",
+            "3",
+            "4",
+            "10",
+            "16",
+            "21",
+            "22",
+            "23"
+          ],
+          "preview": "Fuzhao Xue $^{1 \\dagger} \\quad$ Zian Zheng $^{1} \\quad$ Yao Fu $^{2} \\quad$ Jinjie Ni ${ }^{1} \\quad$ Zangwei Zheng $^{1}$"
+        },
+        {
+          "id": "2",
+          "title": "Abstract",
+          "paragraph_count": 4,
+          "children": [],
+          "preview": "To help the open-source community have a better understanding of Mixture-ofExperts (MoE) based large language models (LLMs), we train and release OpenMoE, a series of fully open-so"
+        },
+        {
+          "id": "3",
+          "title": "1 Introduction",
+          "paragraph_count": 8,
+          "children": [],
+          "preview": "Large Language Model (LLM) has exhibited remarkable performance on various NLP tasks [29. 37], and has even become a part of our daily lives through chatbot applications such as Ch"
+        },
+        {
+          "id": "4",
+          "title": "2 Designing OpenMoE",
+          "paragraph_count": 1,
+          "children": [
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+          ],
+          "preview": "First, we introduce our initialized design of OpenMoE models regarding the pre-training data, model architecture, training objective, and supervised fine-tuning data."
+        },
+        {
+          "id": "5",
+          "title": "2.1 Pre-training Dataset: More Code than Usual",
+          "paragraph_count": 3,
+          "children": [],
+          "preview": "Modern LLMs are usually trained by a combination of datasets from various domains, i.e., data mixture [7, 9, 21, 36, 49]. Except for the LLMs customized towards coding (e.g., StarC"
+        },
+        {
+          "id": "6",
+          "title": "2.2 Model Architecture: Decoder-only ST-MoE",
+          "paragraph_count": 25,
+          "children": [],
+          "preview": "Tokenizer. We applied umT5 [10] tokenizer with $256 \\mathrm{~K}$ vocab size for two reasons: (1) umT5 tokenizer with a large multi-lingual vocab supports low-resource language bett"
+        },
+        {
+          "id": "7",
+          "title": "2.3 Training Objective: UL2 and CasualLM",
+          "paragraph_count": 2,
+          "children": [],
+          "preview": "Instead of adopting vanilla casual language modeling (CasualLM) directly, we explore UL2 [46], a more diverse language model pre-training objective combining span corruption (SpanC"
+        },
+        {
+          "id": "8",
+          "title": "2.4 Supervised Fine-tuning",
+          "paragraph_count": 9,
+          "children": [],
+          "preview": "Although alignment is not the focus of this OpenMoE project, we still conduct supervised fine-tuning (SFT) with a subset of the open-sourced WildChat dataset [2] to enhance the ins"
+        }
+      ]
+    }
+  ],
+  "financial": [
+    {
+      "doc_id": "DOC1",
+      "title": "《2024年一季度报告》",
+      "node_count": 1,
+      "nodes": [
+        {
+          "id": "1",
+          "title": "前言",
+          "paragraph_count": 16,
+          "children": [],
+          "preview": "证券代码：002011                 证券简称：盾安环境                 公告编号：2024-014 浙江盾安人工环境股份有限公司2024年第一季度报告 本公司及董事会全体成员保证信息披露的内容真实、准确、完整，没有虚假记载、误导性陈述或重大遗漏。 重要内容提示： 1.董事会、监事会及董事、监事、高级管理人员保证季度报告的真"
+        }
+      ]
+    },
+    {
+      "doc_id": "DOC2",
+      "title": "《2024年一季度报告》",
+      "node_count": 1,
+      "nodes": [
+        {
+          "id": "1",
+          "title": "前言",
+          "paragraph_count": 25,
+          "children": [],
+          "preview": "证券代码：300463                            证券简称：迈克生物                        公告编号：2024-032 迈克生物股份有限公司2024年第一季度报告 本公司及董事会全体成员保证信息披露的内容真实、准确、完整，没有虚假记载、误导性陈述或重大遗漏。 重要内容提示： 1.董事会、监事会及董事、监事、"
+        }
+      ]
+    },
+    {
+      "doc_id": "DOC3",
+      "title": "《倍加洁集团股份有限公司2024年第一季度报告》",
+      "node_count": 1,
+      "nodes": [
+        {
+          "id": "1",
+          "title": "前言",
+          "paragraph_count": 18,
+          "children": [],
+          "preview": "证券代码：603059                            证券简称：倍加洁"
+        }
+      ]
+    }
+  ]
+}

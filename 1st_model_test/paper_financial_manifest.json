@@ -16,5 +16,14 @@
     "language": "zh",
     "question": "请回答 '交易性金融资产' 最高的公司是哪一个？",
     "sample_id": "financial_level2_1"
+  },
+  {
+    "selected_index": 800,
+    "record_id": "62205a78-ebd1-474d-bb19-cc7a06673141",
+    "record_type": "legal",
+    "level": 2,
+    "language": "zh",
+    "question": "案由为'行政行为-行政给付'的判决是哪些？请按照文中出现的顺序作答。",
+    "sample_id": "legal_level2_1"
   }
 ]

@@ -1,0 +1,786 @@
+{
+  "paper": [
+    {
+      "doc_id": "DOC1",
+      "title": "TinyLlama: An Open-Source Small Language Model",
+      "node_count": 13,
+      "top_nodes": [
+        {
+          "id": "1",
+          "title": "TinyLlama: An Open-Source Small Language Model",
+          "paragraph_count": 0,
+          "children": []
+        },
+        {
+          "id": "2",
+          "title": "TinyLlama: An Open-Source Small Language Model",
+          "paragraph_count": 2,
+          "children": [
+            "3",
+            "4",
+            "5",
+            "10",
+            "11",
+            "12",
+            "13"
+          ]
+        },
+        {
+          "id": "3",
+          "title": "Abstract",
+          "paragraph_count": 1,
+          "children": []
+        },
+        {
+          "id": "4",
+          "title": "1 Introduction",
+          "paragraph_count": 4,
+          "children": []
+        },
+        {
+          "id": "5",
+          "title": "2 Pretraining",
+          "paragraph_count": 1,
+          "children": [
+            "6",
+            "7",
+            "8",
+            "9"
+          ]
+        },
+        {
+          "id": "6",
+          "title": "2.1 Pre-training data",
+          "paragraph_count": 4,
+          "children": []
+        },
+        {
+          "id": "7",
+          "title": "2.2 Architecture",
+          "paragraph_count": 7,
+          "children": []
+        },
+        {
+          "id": "8",
+          "title": "2.3 Speed Optimizations",
+          "paragraph_count": 4,
+          "children": []
+        },
+        {
+          "id": "9",
+          "title": "2.4 Training",
+          "paragraph_count": 4,
+          "children": []
+        },
+        {
+          "id": "10",
+          "title": "3 Results",
+          "paragraph_count": 21,
+          "children": []
+        }
+      ]
+    },
+    {
+      "doc_id": "DOC2",
+      "title": "Lory: Fully Differentiable Mixture-of-Experts for Autoregressive Language Model Pre-training",
+      "node_count": 24,
+      "top_nodes": [
+        {
+          "id": "1",
+          "title": "Lory: Fully Differentiable Mixture-of-Experts for Autoregressive Language Model Pre-training",
+          "paragraph_count": 0,
+          "children": []
+        },
+        {
+          "id": "2",
+          "title": "Lory: Fully Differentiable Mixture-of-Experts for Autoregressive Language Model Pre-training",
+          "paragraph_count": 1,
+          "children": [
+            "3",
+            "4",
+            "5",
+            "8",
+            "11",
+            "14",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24"
+          ]
+        },
+        {
+          "id": "3",
+          "title": "Abstract",
+          "paragraph_count": 1,
+          "children": []
+        },
+        {
+          "id": "4",
+          "title": "1 Introduction",
+          "paragraph_count": 8,
+          "children": []
+        },
+        {
+          "id": "5",
+          "title": "2 Preliminaries",
+          "paragraph_count": 0,
+          "children": [
+            "6",
+            "7"
+          ]
+        },
+        {
+          "id": "6",
+          "title": "2.1 Sparsely-activated MoE",
+          "paragraph_count": 3,
+          "children": []
+        },
+        {
+          "id": "7",
+          "title": "2.2 Fully Differentiable MoE Architectures via Expert Merging",
+          "paragraph_count": 3,
+          "children": []
+        },
+        {
+          "id": "8",
+          "title": "3 Our Approach: Lory",
+          "paragraph_count": 2,
+          "children": [
+            "9",
+            "10"
+          ]
+        },
+        {
+          "id": "9",
+          "title": "3.1 Efficient Expert Merging via Causal Segment Routing",
+          "paragraph_count": 5,
+          "children": []
+        },
+        {
+          "id": "10",
+          "title": "3.2 Similarity-based Data Batching",
+          "paragraph_count": 1,
+          "children": []
+        }
+      ]
+    },
+    {
+      "doc_id": "DOC3",
+      "title": "OpenMoE: An Early Effort on Open Mixture-of-Experts Language Models",
+      "node_count": 28,
+      "top_nodes": [
+        {
+          "id": "1",
+          "title": "OpenMoE: An Early Effort on Open Mixture-of-Experts Language Models",
+          "paragraph_count": 0,
+          "children": []
+        },
+        {
+          "id": "2",
+          "title": "OpenMoE: An Early Effort on Open Mixture-of-Experts Language Models",
+          "paragraph_count": 6,
+          "children": [
+            "3",
+            "4",
+            "5",
+            "15",
+            "21",
+            "26",
+            "27",
+            "28"
+          ]
+        },
+        {
+          "id": "3",
+          "title": "Abstract",
+          "paragraph_count": 4,
+          "children": []
+        },
+        {
+          "id": "4",
+          "title": "1 Introduction",
+          "paragraph_count": 8,
+          "children": []
+        },
+        {
+          "id": "5",
+          "title": "2 Designing OpenMoE",
+          "paragraph_count": 1,
+          "children": [
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14"
+          ]
+        },
+        {
+          "id": "6",
+          "title": "2.1 Pre-training Dataset: More Code than Usual",
+          "paragraph_count": 3,
+          "children": []
+        },
+        {
+          "id": "7",
+          "title": "2.2 Model Architecture: Decoder-only ST-MoE",
+          "paragraph_count": 3,
+          "children": []
+        },
+        {
+          "id": "8",
+          "title": "(x) \\tag{1}",
+          "paragraph_count": 7,
+          "children": []
+        },
+        {
+          "id": "9",
+          "title": "(x) \\\\",
+          "paragraph_count": 1,
+          "children": []
+        },
+        {
+          "id": "10",
+          "title": "(x)  \\tag{3}\\\\",
+          "paragraph_count": 3,
+          "children": []
+        }
+      ]
+    }
+  ],
+  "financial": [
+    {
+      "doc_id": "DOC1",
+      "title": "《2024年一季度报告》",
+      "node_count": 13,
+      "top_nodes": [
+        {
+          "id": "1",
+          "title": "《2024年一季度报告》",
+          "paragraph_count": 1,
+          "children": []
+        },
+        {
+          "id": "2",
+          "title": "浙江盾安人工环境股份有限公司2024年第一季度报告",
+          "paragraph_count": 1,
+          "children": [
+            "3",
+            "7",
+            "10",
+            "11"
+          ]
+        },
+        {
+          "id": "3",
+          "title": "一、主要财务数据",
+          "paragraph_count": 0,
+          "children": [
+            "4",
+            "5",
+            "6"
+          ]
+        },
+        {
+          "id": "4",
+          "title": "（一）主要会计数据和财务指标",
+          "paragraph_count": 2,
+          "children": []
+        },
+        {
+          "id": "5",
+          "title": "（二）非经常性损益项目和金额",
+          "paragraph_count": 4,
+          "children": []
+        },
+        {
+          "id": "6",
+          "title": "（三）主要会计数据和财务指标发生变动的情况及原因",
+          "paragraph_count": 2,
+          "children": []
+        },
+        {
+          "id": "7",
+          "title": "二、股东信息",
+          "paragraph_count": 0,
+          "children": [
+            "8",
+            "9"
+          ]
+        },
+        {
+          "id": "8",
+          "title": "（一）普通股股东总数和表决权恢复的优先股股东数量及前十名股东持股情况表",
+          "paragraph_count": 3,
+          "children": []
+        },
+        {
+          "id": "9",
+          "title": "（二）公司优先股股东总数及前 10名优先股股东持股情况表",
+          "paragraph_count": 1,
+          "children": []
+        },
+        {
+          "id": "10",
+          "title": "三、其他重要事项",
+          "paragraph_count": 1,
+          "children": []
+        }
+      ]
+    },
+    {
+      "doc_id": "DOC2",
+      "title": "《2024年一季度报告》",
+      "node_count": 14,
+      "top_nodes": [
+        {
+          "id": "1",
+          "title": "《2024年一季度报告》",
+          "paragraph_count": 1,
+          "children": []
+        },
+        {
+          "id": "2",
+          "title": "迈克生物股份有限公司2024年第一季度报告",
+          "paragraph_count": 1,
+          "children": [
+            "3",
+            "7",
+            "11",
+            "12"
+          ]
+        },
+        {
+          "id": "3",
+          "title": "一、主要财务数据",
+          "paragraph_count": 0,
+          "children": [
+            "4",
+            "5",
+            "6"
+          ]
+        },
+        {
+          "id": "4",
+          "title": "（一）主要会计数据和财务指标",
+          "paragraph_count": 4,
+          "children": []
+        },
+        {
+          "id": "5",
+          "title": "（二）非经常性损益项目和金额",
+          "paragraph_count": 4,
+          "children": []
+        },
+        {
+          "id": "6",
+          "title": "（三）主要会计数据和财务指标发生变动的情况及原因",
+          "paragraph_count": 6,
+          "children": []
+        },
+        {
+          "id": "7",
+          "title": "二、股东信息",
+          "paragraph_count": 0,
+          "children": [
+            "8",
+            "9",
+            "10"
+          ]
+        },
+        {
+          "id": "8",
+          "title": "（一）普通股股东总数和表决权恢复的优先股股东数量及前十名股东持股情况表",
+          "paragraph_count": 3,
+          "children": []
+        },
+        {
+          "id": "9",
+          "title": "（二）公司优先股股东总数及前 10名优先股股东持股情况表",
+          "paragraph_count": 1,
+          "children": []
+        },
+        {
+          "id": "10",
+          "title": "（三）限售股份变动情况",
+          "paragraph_count": 1,
+          "children": []
+        }
+      ]
+    },
+    {
+      "doc_id": "DOC3",
+      "title": "《倍加洁集团股份有限公司2024年第一季度报告》",
+      "node_count": 13,
+      "top_nodes": [
+        {
+          "id": "1",
+          "title": "《倍加洁集团股份有限公司2024年第一季度报告》",
+          "paragraph_count": 3,
+          "children": [
+            "2",
+            "6",
+            "9",
+            "10"
+          ]
+        },
+        {
+          "id": "2",
+          "title": "一、主要财务数据",
+          "paragraph_count": 0,
+          "children": [
+            "3",
+            "4",
+            "5"
+          ]
+        },
+        {
+          "id": "3",
+          "title": "(一)主要会计数据和财务指标",
+          "paragraph_count": 3,
+          "children": []
+        },
+        {
+          "id": "4",
+          "title": "(二)非经常性损益项目和金额",
+          "paragraph_count": 3,
+          "children": []
+        },
+        {
+          "id": "5",
+          "title": "(三)主要会计数据、财务指标发生变动的情况、原因",
+          "paragraph_count": 2,
+          "children": []
+        },
+        {
+          "id": "6",
+          "title": "二、股东信息",
+          "paragraph_count": 0,
+          "children": [
+            "7",
+            "8"
+          ]
+        },
+        {
+          "id": "7",
+          "title": "(一)普通股股东总数和表决权恢复的优先股股东数量及前十名股东持股情况表",
+          "paragraph_count": 3,
+          "children": []
+        },
+        {
+          "id": "8",
+          "title": "(二)公司优先股股东总数及前 10名优先股股东持股情况表",
+          "paragraph_count": 0,
+          "children": []
+        },
+        {
+          "id": "9",
+          "title": "三、其他提醒事项",
+          "paragraph_count": 1,
+          "children": []
+        },
+        {
+          "id": "10",
+          "title": "四、季度财务报表",
+          "paragraph_count": 0,
+          "children": [
+            "11",
+            "12",
+            "13"
+          ]
+        }
+      ]
+    }
+  ],
+  "legal": [
+    {
+      "doc_id": "DOC1",
+      "title": "《判决文书1》",
+      "node_count": 3,
+      "top_nodes": [
+        {
+          "id": "1",
+          "title": "《判决文书1》",
+          "paragraph_count": 1,
+          "children": [
+            "2",
+            "3"
+          ]
+        },
+        {
+          "id": "2",
+          "title": "另查明，2011年4月15日，浦东公安分局因涉案刑事案件扣押章某名下沪Ｊ2××××途锐越野车。章某在一中院申请国家赔偿的同时，其已经就该部分损失向浦东公安分局申请国家赔偿。2020年12月18日，浦东公安分局作出（2020）沪公（浦）刑赔字第020号刑事赔偿决定，决定赔偿章某612000元。2021年3月12日，上海市公安局作出沪公赔复决字（2021）2号刑事赔偿复议决定，维持上述刑事赔偿决定。上海市第二中级人民法院（以下简称二中院）赔偿委员会受理章某要求赔偿车辆损失的国家赔偿案，并于2021年11月10日作出（2021）沪02委赔9号国家赔偿决定，维持上海市公安局作出的刑事赔偿复议决定。",
+          "paragraph_count": 1,
+          "children": []
+        },
+        {
+          "id": "3",
+          "title": "本院赔偿委员会认为，一中院针对章某被无罪羁押1096日的事实，依照每日409.34元标准，决定支付人身自由赔偿金总计448636.64元，并在侵权行为的影响范围内为章某消除影响，恢复名誉、赔礼道歉，并无不妥。",
+          "paragraph_count": 1,
+          "children": []
+        }
+      ]
+    },
+    {
+      "doc_id": "DOC2",
+      "title": "《判决文书2》",
+      "node_count": 13,
+      "top_nodes": [
+        {
+          "id": "1",
+          "title": "《判决文书2》",
+          "paragraph_count": 0,
+          "children": [
+            "2",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13"
+          ]
+        },
+        {
+          "id": "2",
+          "title": "赔偿请求人：王某，男，1966年4月8日出生，汉族，住北京市海淀区。",
+          "paragraph_count": 0,
+          "children": [
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+          ]
+        },
+        {
+          "id": "3",
+          "title": "赔偿请求人：杨某平,女，1969年11月29日出生，汉族，住北京市海淀区。",
+          "paragraph_count": 0,
+          "children": []
+        },
+        {
+          "id": "4",
+          "title": "赔偿请求人：王某，女，1992年11月18日出生，汉族，住北京市海淀区。",
+          "paragraph_count": 0,
+          "children": []
+        },
+        {
+          "id": "5",
+          "title": "赔偿请求人：姜某明，男，1972年12月16日出生，汉族，住北京市海淀区。",
+          "paragraph_count": 0,
+          "children": []
+        },
+        {
+          "id": "6",
+          "title": "赔偿请求人：北京甲公司。住所地：北京市海淀区翠微路12号21层5单元2102。",
+          "paragraph_count": 1,
+          "children": []
+        },
+        {
+          "id": "7",
+          "title": "赔偿请求人：黄某婷，女，1989年6月3日出生，汉族，住海南省海口市美兰区。",
+          "paragraph_count": 1,
+          "children": []
+        },
+        {
+          "id": "8",
+          "title": "赔偿请求人王某、杨某平、王某、姜某明、北京甲公司、黄某婷（以下简称王某等人）因申请内蒙古自治区公安厅（以下简称内蒙古公安厅）刑事违法查封、冻结赔偿一案，不服中华人民共和国公安部（以下简称公安部）公赔复决字〔2023〕7号刑事赔偿复议决定，向本院赔偿委员会申请作出赔偿决定。本院赔偿委员会依法对本案进行了书面审理，现已审理终结。",
+          "paragraph_count": 1,
+          "children": []
+        },
+        {
+          "id": "9",
+          "title": "经审理查明，2016年初，公安部经侦局将国务院国资委信息中心举报中国长城资产管理公司呼和浩特市办事处涉嫌经济犯罪线索转交内蒙古公安厅进行查处。内蒙古公安厅于2016年8月11日对王某以涉嫌提供虚假证明文件案立案侦查，于同年11月29日对王某采取刑事拘留措施，经内蒙古检察院批准于2017年1月6日对王某以涉嫌诈骗罪予以逮捕，于2017年8月3日对王某以涉嫌诈骗罪移送审查起诉。内蒙古自治区呼和浩特市人民检察院（以下简称呼和浩特检察院）于2018年2月23日指控王某在购买中国长城资产管理公司呼和浩特市办事处金融不良债权、购买中信资产管理公司金融不良债权过程中实施诈骗犯罪，向呼和浩特中院提起公诉。呼和浩特中院于2020年5月12日作出一审刑事判决，认为公诉机关指控王某构成诈骗罪因证据不足不能成立，认定王某无罪。呼和浩特检察院向内蒙古高院抗诉。内蒙古高院于2021年12月27日作出终审刑事裁定，认定王某及其实际控制的公司购买其代理追偿的不良债权，违反金融资产相关法律规定，但其行为不构成诈骗罪，驳回抗诉，维持原判。",
+          "paragraph_count": 1,
+          "children": []
+        },
+        {
+          "id": "10",
+          "title": "二、之三刑事裁定书，内蒙古自治区公安厅立案决定书、拘留证、逮捕证、查封决定书、协助冻结财产通知书及办理刑事案件过程中收集的相关账户资金流水等证据证实。",
+          "paragraph_count": 0,
+          "children": []
+        }
+      ]
+    },
+    {
+      "doc_id": "DOC3",
+      "title": "《判决文书3》",
+      "node_count": 6,
+      "top_nodes": [
+        {
+          "id": "1",
+          "title": "《判决文书3》",
+          "paragraph_count": 1,
+          "children": [
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ]
+        },
+        {
+          "id": "2",
+          "title": "另查明，2020年5月18日，因受“新冠”病毒疫情影响，辽宁省高级人民法院组织鉴定机构、赔偿请求人、赔偿义务机关“线上”召开有关上述司法鉴定会议，会议明确并经赔偿请求人、赔偿义务机关知情同意后签字确认法院送检鉴定依据材料包括：1.中国医科大学法医司法鉴定中心法医病理鉴定意见书、法医毒物检验报告书、毒物药物分析检验报告复印件；2.新入监服刑人员体检表复印件；3.沈阳新入监犯监狱卫生所诊疗记录及患者李某心电图复印件；4.沈阳急救中心院前出诊病历及危重病人抢救治疗记录复印件；5.中国医科大学附属第一医院门诊病历复印件。",
+          "paragraph_count": 1,
+          "children": []
+        },
+        {
+          "id": "3",
+          "title": "一、关于本案是否属于国家赔偿法调整范围问题",
+          "paragraph_count": 1,
+          "children": []
+        },
+        {
+          "id": "4",
+          "title": "二、关于法源鉴定中心的司法鉴定是否合法及是否需要重新鉴定问题",
+          "paragraph_count": 1,
+          "children": []
+        },
+        {
+          "id": "5",
+          "title": "三、关于赔偿义务机关应否承担国家赔偿责任以及如何承担责任问题",
+          "paragraph_count": 1,
+          "children": []
+        },
+        {
+          "id": "6",
+          "title": "本院赔偿委员会认为，本案审查的重点是原决定确定赔偿责任比例以及精神损害抚慰金数额是否过低问题。",
+          "paragraph_count": 1,
+          "children": []
+        }
+      ]
+    },
+    {
+      "doc_id": "DOC4",
+      "title": "《判决文书4》",
+      "node_count": 2,
+      "top_nodes": [
+        {
+          "id": "1",
+          "title": "《判决文书4》",
+          "paragraph_count": 1,
+          "children": [
+            "2"
+          ]
+        },
+        {
+          "id": "2",
+          "title": "本院认为，本案系申请人在违法强拆引发的赔偿诉讼已经法院审理并作出生效判决后，再次就利息损失提起的赔偿诉讼。再审审查中，本案主要争议问题系申请人提起本案诉讼是否具有应当保护的诉讼利益。",
+          "paragraph_count": 1,
+          "children": []
+        }
+      ]
+    },
+    {
+      "doc_id": "DOC5",
+      "title": "《判决文书5》",
+      "node_count": 2,
+      "top_nodes": [
+        {
+          "id": "1",
+          "title": "《判决文书5》",
+          "paragraph_count": 1,
+          "children": [
+            "2"
+          ]
+        },
+        {
+          "id": "2",
+          "title": "本院认为，当事人应主动履行生效裁判确定的义务，在期限内不履行的，人民法院有权依申请强制执行。涉及本案，某乙公司持有的某丙公司24.05%的股权属于其责任财产，福州中院冻结上述股权并拟拍卖，符合法律规定。某乙公司所称上述股权的转让受到法律法规的约束，因此法院应解除对股权之冻结的说法，没有法律依据。但，福州中院在此后的拍卖程序中，应严格依法限定参与竞买人的准入条件，并依法在拍卖公告和竞买人条件予以公示。此外，某乙公司如与申请执行人某甲公司达成执行和解，可由申请执行人另行向执行法院提交中止执行申请。",
+          "paragraph_count": 1,
+          "children": []
+        }
+      ]
+    },
+    {
+      "doc_id": "DOC6",
+      "title": "《判决文书6》",
+      "node_count": 3,
+      "top_nodes": [
+        {
+          "id": "1",
+          "title": "《判决文书6》",
+          "paragraph_count": 1,
+          "children": [
+            "2",
+            "3"
+          ]
+        },
+        {
+          "id": "2",
+          "title": "一、二审法院未能依法查清西城人社局适用法律错误，认定事实错误的事实，故请求依法撤销一、二审判决，支持其一审诉讼请求。",
+          "paragraph_count": 0,
+          "children": []
+        },
+        {
+          "id": "3",
+          "title": "本院认为，《人力资源和社会保障部关于印发城镇企业职工基本养老保险关系转移接续若干具体问题意见的通知》（人社部发[2010]70号）第四点中规定，男性年满50周岁和女性年满40周岁的人员，首次参保地为非户籍所在地的，参保地应为其建立临时基本养老保险缴费账户。参保人员在建立临时基本养老保险缴费账户期间达到待遇领取条件时，原保留基本养老保险关系所在地负责将其临时基本养老保险缴费账户进行归集归并。其中，只有临时基本养老保险缴费账户的，由户籍所在地负责归集归并，并在办理转入手续的同时进行参保信息登记。该通知第五点中规定，参保人员达到待遇领取条件、尚未办理待遇领取手续期间，户籍发生变动的，在确定户籍所在地时，以其达到待遇领取条件的年龄时点为准。本案中，王某某达到退休年龄时为外埠户籍，其社保账户类别为临时账户。西城人社局经过调查认定，告知王某某不符合在北京办理退休条件，作出《北京市基本养老保险退休待遇资格核准告知书》并无不当。一审法院判决驳回王某某诉讼请求、二审法院判决驳回王某某的上诉正确。王某某申请再审缺乏事实根据和法律依据，本院不予支持。",
+          "paragraph_count": 1,
+          "children": []
+        }
+      ]
+    },
+    {
+      "doc_id": "DOC7",
+      "title": "《判决文书7》",
+      "node_count": 3,
+      "top_nodes": [
+        {
+          "id": "1",
+          "title": "《判决文书7》",
+          "paragraph_count": 1,
+          "children": [
+            "2"
+          ]
+        },
+        {
+          "id": "2",
+          "title": "本院认为，根据本案查明的事实，结合复议申请人所提请求及理由，本案的焦点问题是判决的内容是否得到履行。",
+          "paragraph_count": 1,
+          "children": [
+            "3"
+          ]
+        },
+        {
+          "id": "3",
+          "title": "（一）项规定，裁定如下：",
+          "paragraph_count": 1,
+          "children": []
+        }
+      ]
+    },
+    {
+      "doc_id": "DOC8",
+      "title": "《判决文书8》",
+      "node_count": 3,
+      "top_nodes": [
+        {
+          "id": "1",
+          "title": "《判决文书8》",
+          "paragraph_count": 1,
+          "children": [
+            "2",
+            "3"
+          ]
+        },
+        {
+          "id": "2",
+          "title": "一、本案由本院提审；",
+          "paragraph_count": 0,
+          "children": []
+        },
+        {
+          "id": "3",
+          "title": "二、提审期间，中止原判决的执行。",
+          "paragraph_count": 1,
+          "children": []
+        }
+      ]
+    }
+  ]
+}
