@@ -137,7 +137,7 @@ class Divider:
         return compact[: limit - 3].rstrip() + "..."
 
     @staticmethod
-    def _split_long_paragraph(text: str, target_chars: int = 420) -> List[str]:
+    def _split_long_paragraph(text: str, target_chars: int = 1200) -> List[str]:
         compact = text.strip()
         if not compact:
             return []
@@ -237,7 +237,7 @@ class Divider:
             current_text = []
             if not text:
                 return
-            if current_type == "paragraph" and len(text) > 520:
+            if current_type == "paragraph" and len(text) > 1600:
                 for chunk in cls._split_long_paragraph(text):
                     cls._append_packet(
                         packets=packets,
@@ -335,17 +335,30 @@ class Divider:
                 current_region_chars = len(packet.text)
                 continue
             same_path = packet.section_path == current_region_path
-            keeps_same_kind = packet.packet_type not in {"heading", "table_row", "reference_entry"}
-            paragraph_run = (
-                current_region_packets[-1].packet_type == "paragraph"
-                and packet.packet_type == "paragraph"
-            )
+            current_packet_types = {item.packet_type for item in current_region_packets}
+            combined_packet_types = current_packet_types | {packet.packet_type}
+            non_heading_types = {packet_type for packet_type in combined_packet_types if packet_type != "heading"}
+            structural_break = packet.packet_type == "heading"
+            table_like_run = bool(non_heading_types) and non_heading_types <= {"table_row"}
+            reference_like_run = bool(non_heading_types) and non_heading_types <= {"reference_entry"}
+            clause_like_run = bool(non_heading_types) and non_heading_types <= {"clause", "list_item"}
+
+            if table_like_run or reference_like_run:
+                max_packets = 64
+                max_chars = 8000
+            elif clause_like_run:
+                max_packets = 12
+                max_chars = 2400
+            else:
+                max_packets = 4
+                max_chars = 1600
+
             region_too_large = (
-                len(current_region_packets) >= 4
-                or (current_region_chars + len(packet.text)) >= 1200
-                or (paragraph_run and len(current_region_packets) >= 2)
+                len(current_region_packets) >= max_packets
+                or (current_region_chars + len(packet.text)) >= max_chars
             )
-            if same_path and keeps_same_kind and not region_too_large:
+
+            if same_path and not structural_break and not region_too_large:
                 current_region_packets.append(packet)
                 current_region_chars += len(packet.text)
                 continue

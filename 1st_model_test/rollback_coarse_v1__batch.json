@@ -1,0 +1,53 @@
+{
+  "sample_prefix": "rollback_coarse_v1",
+  "jsonl_path": "/workspace/golden_retriever/Loong/data/loong_process.jsonl",
+  "manifest_path": "/workspace/golden_retriever/1st_model_test/paper_financial_manifest.json",
+  "filters": {
+    "set_id": null,
+    "selected_index": null,
+    "record_type": null,
+    "level": null,
+    "max_per_combo": 1,
+    "max_items": 2,
+    "max_repair_rounds": 1
+  },
+  "runs": [
+    {
+      "sample_id": "rollback_coarse_v1_paper_level3_1",
+      "record_type": "paper",
+      "level": 3,
+      "selected_index": 0,
+      "checker_verdict": false,
+      "gold_answer": {
+        "Reference": [
+          "# TinyLlama: An Open-Source Small Language Model "
+        ],
+        "Citation": [
+          "# Lory: Fully Differentiable Mixture-of-Experts for Autoregressive Language Model Pre-training "
+        ]
+      },
+      "projected_answer": null,
+      "generated_answer": null,
+      "projection_exact_match": false,
+      "projection_pair_f1": null,
+      "generator_exact_match": false,
+      "generator_pair_f1": null,
+      "pipeline_trace_path": "/workspace/golden_retriever/trace_logs/pipeline/rollback_coarse_v1_paper_level3_1.json"
+    },
+    {
+      "sample_id": "rollback_coarse_v1_financial_level2_1",
+      "record_type": "financial",
+      "level": 2,
+      "selected_index": 1050,
+      "checker_verdict": false,
+      "gold_answer": "迈克生物",
+      "projected_answer": null,
+      "generated_answer": null,
+      "projection_exact_match": false,
+      "projection_pair_f1": null,
+      "generator_exact_match": false,
+      "generator_pair_f1": null,
+      "pipeline_trace_path": "/workspace/golden_retriever/trace_logs/pipeline/rollback_coarse_v1_financial_level2_1.json"
+    }
+  ]
+}

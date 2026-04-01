@@ -39,12 +39,13 @@ Use the execution graph and planning notes to judge whether the current misses a
 
 ### Verified Evidence Units
 Write bullet lines in this exact format:
-- [EVID_1] answer_key=... | value_hint=... | basis=... | note=...
+- [EVID_1] answer_key=... | value_hint=... | strength=... | basis=...
 Rules:
 - Emit only evidence that is strong enough to support later projection.
 - Final category or case-type projection happens here, not in the retriever.
 - Retriever evidence-unit statuses are only collection-time labels, not final semantic judgments.
-- Decide here whether each grounded candidate should be used, rejected as off-target, or left unresolved.
+- Decide here whether each grounded candidate is usable, weak, off-target, or still unresolved.
+- strength must be one of: usable, weak, off_target, conflicted.
 - Distinguish strong usable evidence from weak but still relevant evidence.
 - For category or case-type tasks, a local formulation can be strong enough if it directly identifies the dispute, claim, benefit, or action that the target category refers to.
 - For category or case-type tasks, broad compensation, supervision, liability, or administrative-duty wording is not enough by itself when it still requires an extra semantic leap to reach the target category.
@@ -52,20 +53,9 @@ Rules:
 - basis should cite the relevant step ids, packet refs, or evidence units.
 - Do not use the pipe character inside field values.
 
-### Projected Answer State
-Write bullet lines in this exact format:
-- [STATE_1] answer_key=... | value=... | basis=...
-Rules:
-- This is the first place where answer-level projection happens.
-- Keep values inside the allowed answer space.
-- Prefer grounded semantic projection over exact lexical matching, but stay conservative when the mapping is weak.
-- If a candidate formulation is relevant but still broader than the target category, leave it out of the projected answer state and keep it as ambiguity or a remaining gap.
-- For numeric values, normalize the sign and units conservatively.
-- Do not use the pipe character inside field values.
-
 ### Slot Fill State
 Write bullet lines in this exact format:
-- [SLOT_1] doc=... | title=... | state=... | basis=... | note=...
+- [SLOT_1] doc=... | title=... | state=... | basis=...
 Rules:
 - For exhaustive closed-set list tasks, every document is a required slot and must appear exactly once here.
 - state must be one of: selected, rejected_off_target, rejected_no_evidence_after_scoped_search, unresolved_scope_gap, unresolved_conflict.
@@ -110,3 +100,15 @@ FALSE
 Rules:
 - For exhaustive closed-set list tasks, return TRUE when every document slot is in a terminal state and the projected answer state is consistent with the selected slots.
 - Return FALSE only when at least one required slot remains unresolved or the current projected answer state is inconsistent with the slot states.
+
+### Projected Answer State
+Write bullet lines in this exact format:
+- [STATE_1] answer_key=... | value=... | basis=...
+Rules:
+- Fill this section only after you have determined the evidence ledger and slot states.
+- This is the first place where answer-level projection happens.
+- Keep values inside the allowed answer space.
+- Prefer grounded semantic projection over exact lexical matching, but stay conservative when the mapping is weak.
+- If a candidate formulation is relevant but still broader than the target category, leave it out of the projected answer state and keep it as ambiguity or a remaining gap.
+- For numeric values, normalize the sign and units conservatively.
+- Do not use the pipe character inside field values.

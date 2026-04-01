@@ -46,12 +46,12 @@ Write bullet lines in this exact format:
 Rules:
 - Keep it short.
 - Mention only the main scoped search actions you actually used.
-- Prefer a sequence like locate -> inspect neighbor -> record when that reflects what you did.
+- Prefer a sequence like locate -> inspect neighbor -> extract when that reflects what you did.
 - Do not use the pipe character inside field values.
 
 ### Evidence Units
 Write bullet lines in this exact format:
-- [UNIT_1] search_target=... | status=... | packet_refs=... | evidence_kind=... | extracted_text=... | note=...
+- [UNIT_1] search_target=... | status=... | packet_refs=... | evidence_kind=... | extracted_text=...
 Rules:
 - status must be one of: grounded_candidate, scoped_no_hit.
 - Extract evidence, not your conclusion alone.

@@ -35,6 +35,9 @@ Important rules:
 - For category, cause-of-action, or case-type tasks, your job is to capture the best grounded local formulation, not to force an early final category decision.
 - If a concrete dispute, benefit, entitlement, refusal, approval, payment, qualification, or administrative action is described, emit that wording as candidate evidence even when the target label itself is absent.
 - If the wording is broader than the target category but still plausibly relevant, pass it forward as candidate evidence and let the checker decide whether to use it.
+- Return extraction records, not judgments.
+- Do not explain whether the evidence is enough for final task completion.
+- Do not add interpretive notes that go beyond the extracted source wording.
 
 Reason in this order:
 1. Locate the most promising packet or packets inside the scoped view.

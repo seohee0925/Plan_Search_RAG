@@ -1,6 +1,5 @@
 .env
 trace_logs/
-1st_model_test/
 
 __pycache__/
 *.py[cod]

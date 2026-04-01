@@ -379,14 +379,7 @@ class Checker:
                 output_obj = run.get("output", {})
                 input_meta = input_obj.get("metadata", {}) or {}
                 for evidence_unit in output_obj.get("evidence_units", []) or []:
-                    claim_text = " ".join(
-                        part
-                        for part in [
-                            str(evidence_unit.get("extracted_text", "")).strip(),
-                            str(evidence_unit.get("note", "")).strip(),
-                        ]
-                        if part
-                    ).strip()
+                    claim_text = str(evidence_unit.get("extracted_text", "")).strip()
                     numeric = self._extract_numeric_value(claim_text)
                     if numeric is not None:
                         label = (
