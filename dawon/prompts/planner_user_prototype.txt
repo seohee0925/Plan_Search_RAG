@@ -1,0 +1,78 @@
+Task Instruction:
+{instruction}
+
+Target Question:
+{question}
+
+Candidate Document Titles:
+{doc_title_bundle}
+
+Checker Feedback:
+{checker_feedback_or_none}
+
+If Checker Feedback is None, plan only from the task and document titles.
+If Checker Feedback is provided, use it only to refine unresolved needs, improve routing, or sharpen search requests.
+
+Be concise but specific.
+Do not write anything outside the required headings and bullet schema.
+
+Output exactly with the following headings and instructions.
+
+### Task Goal
+Write the real decision goal of the task in 1–3 sentences.
+Explain what must be determined before the system can safely answer.
+Do not merely restate the question unless necessary.
+
+### Answer Form
+Write the expected form of the final answer.
+Use a short phrase like fact, set, list, mapping, comparison, ranking, grouping, timeline, chain, scalar, or freeform.
+If none of these fits well, use another concise answer-form label.
+
+### Completion Criterion
+State what must be established before the system can stop searching and safely answer.
+Define completion in terms of grounded evidence, resolved local decisions, or satisfied evidence needs.
+Do not define completion in terms of answer fluency or confidence alone.
+Be conservative: the criterion should prevent guessing.
+
+### Search Strategy
+Describe the most suitable search orientation for this task in 1–4 sentences.
+Use primitive strategy labels like relation-focused, event-order-focused, assignment-focused, comparison-focused, condition-focused, chain-link-focused, grouping-focused, or mixed.
+If none of these fits well, use another concise strategy label.
+Explain why this strategy matches the task and how it should guide evidence search.
+
+### Evidence Needs
+Write atomic, directly checkable evidence needs.
+Use bullet lines in this exact format:
+- [NEED_1] description=... | why=... | success=...
+Rules:
+- Each need must represent one minimal evidence decision.
+- Prefer local decisions over vague global summaries.
+- If the task is closed-set, define needs within the provided candidate space.
+- If the task involves comparison, assignment, ordering, grouping, or relations, write needs at that local-decision level.
+- The success field must describe the decisive evidence pattern, clue, relation, slot, condition, or local fact that would resolve the need.
+- Do not create redundant needs.
+- Do not use the pipe character inside field values.
+
+### Document Routing
+Route each evidence need to the most likely document titles using only title-level signals.
+Use bullet lines in this exact format:
+- [ROUTE_1] need=NEED_1 | doc=DOC3 | why=...
+Rules:
+- The doc field must contain exactly one provided document id.
+- Route from evidence need first, document second.
+- Use document titles as routing hints, not as evidence.
+- Prefer the best starting point rather than listing many documents at once.
+- Do not use the pipe character inside field values.
+
+### Search Requests
+Generate concrete requests for the Searcher.
+Use bullet lines in this exact format:
+- [REQ_1] doc=DOC3 | needs=NEED_1 | goal=... | search_hint=... | expected_output=...
+Rules:
+- Each request must target exactly one document id.
+- Prefer one atomic need per request unless two needs are inseparable.
+- The goal field should state exactly what must be verified in that document.
+- The search_hint field should include short discriminative cues such as entities, relations, events, dates, section types, keywords, clause types, or expected clue patterns.
+- The expected_output field should specify the grounded result the Searcher should return, such as a supporting span, a relation cue, an ordering cue, an assignment cue, a grouping cue, or a completed no-hit scan when appropriate.
+- Do not create redundant requests.
+- Do not use the pipe character inside field values.

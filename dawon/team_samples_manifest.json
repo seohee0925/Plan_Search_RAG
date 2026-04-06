@@ -1,0 +1,29 @@
+[
+  {
+    "selected_index": 0,
+    "record_id": "13a4a371-6339-4c9d-82cf-fc9ab2bb017d",
+    "record_type": "paper",
+    "level": 3,
+    "language": "en",
+    "question": "OpenMoE: An Early Effort on Open Mixture-of-Experts Language Models",
+    "sample_id": "paper_level3_1"
+  },
+  {
+    "selected_index": 1050,
+    "record_id": "93040973-e3a2-4861-8dd7-650f7534d18e",
+    "record_type": "financial",
+    "level": 2,
+    "language": "zh",
+    "question": "请回答 '交易性金融资产' 最高的公司是哪一个？",
+    "sample_id": "financial_level2_1"
+  },
+  {
+    "selected_index": 800,
+    "record_id": "62205a78-ebd1-474d-bb19-cc7a06673141",
+    "record_type": "legal",
+    "level": 2,
+    "language": "zh",
+    "question": "案由为'行政行为-行政给付'的判决是哪些？请按照文中出现的顺序作答。",
+    "sample_id": "legal_level2_1"
+  }
+]

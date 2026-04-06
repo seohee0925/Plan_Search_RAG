@@ -1,0 +1,41 @@
+Task Instruction:
+{instruction}
+
+Target Question:
+{question}
+
+Current Document:
+- doc={doc_id}
+- title={display_title}
+
+Packet Inventory:
+{packet_inventory}
+
+Region Inventory:
+{region_inventory}
+
+Be concise but specific.
+Do not write anything outside the required headings and bullet schema.
+
+Output exactly with the following headings.
+
+### Document Anchor
+Write a short stable natural-language anchor for downstream agents.
+Prefer a compact noun phrase or short phrase, not a full-sentence summary.
+Keep the anchor in the document's own surface language when possible.
+Use a phrase that would still identify the document if only the title and a few key packets were visible.
+
+### Region Roles
+Write bullet lines in this exact format:
+- [REGION_1] region_id=... | role=... | why=...
+Rules:
+- region_id must refer to one region from the Region Inventory.
+- role should be a compact functional label such as metadata_region, lead_region, issue_region, reasoning_region, decision_region, table_region, attribution_region, comparative_region, or fallback_region.
+- why should briefly say why this region may matter for later evidence search.
+- If the document has multiple promising regions, include a likely starting region and at least one fallback region with a different role.
+- Do not overuse metadata_region when later regions may contain stronger evidence.
+- Emit only a small number of high-value regions.
+- Do not use the pipe character inside field values.
+
+### Divider Notes
+Write 1-3 short sentences on how the document seems organized, where later agents should start, and when they should expand beyond the first region.
